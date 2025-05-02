@@ -2,7 +2,7 @@
 
 A modern, responsive weather application built with React.js, Redux Toolkit, Tailwind CSS, and Framer Motion. This app allows users to search for weather information by city name, view current weather conditions, and keep track of recent searches.
 
-![Weather express](/weather-express.png)
+![Weather express](https://github.com/kamrul-CSE-official/Weather_express/blob/main/public/weather-express.png?raw=true)
 
 ## 🌟 Features
 
@@ -19,8 +19,7 @@ A modern, responsive weather application built with React.js, Redux Toolkit, Tai
 ## 🛠️ Technologies Used
 
 - **Frontend**:
-  - Next.js 14 (App Router)
-  - React 18
+  - React.js 19 (vite 6.3)
   - Redux Toolkit
   - Tailwind CSS v4
   - Framer Motion
@@ -28,7 +27,7 @@ A modern, responsive weather application built with React.js, Redux Toolkit, Tai
 
 - **API**:
   - OpenWeatherMap API
-  - Next.js API Routes
+  - Redux RTK query (create async thunk)
 
 ## 📋 Prerequisites
 
@@ -42,7 +41,7 @@ Before you begin, ensure you have:
 
 1. Clone the repository:
    \`\`\`bash
-   git clone https://github.com/yourusername/nextjs-weather-app.git
+   git clone https://github.com/kamrul-CSE-official/Weather_express
    cd nextjs-weather-app
    \`\`\`
 
@@ -55,8 +54,8 @@ Before you begin, ensure you have:
 
 3. Create a `.env.local` file in the root directory with your API keys:
    \`\`\`
-   NEXT_PUBLIC_OPENWEATHER_API_KEY=your_api_key
-   OPENWEATHER_API_KEY=your_api_key
+   VITE_OPENWEATHER_API_KEY=your_api_key
+   VITE_BASE_API=your_baseAPI
    \`\`\`
 
 4. Start the development server:
@@ -66,7 +65,7 @@ Before you begin, ensure you have:
    yarn dev
    \`\`\`
 
-5. Open [http://localhost:3000](http://localhost:3000) in your browser to see the app.
+5. Open [http://localhost:5173](http://localhost:5173) in your browser to see the app.
 
 ## 🔍 Usage
 
@@ -78,11 +77,11 @@ Before you begin, ensure you have:
 ## 📁 Project Structure
 
 \`\`\`
-├── app/                  # Next.js App Router
+├── src/                  # React Router
 │   ├── api/              # API routes
 │   ├── globals.css       # Global styles
-│   ├── layout.tsx        # Root layout
-│   └── page.tsx          # Home page
+│   ├── mainLayout.tsx    # Root layout
+│   └── app.tsx           # Second layer root file
 ├── components/           # React components
 ├── lib/                  # Utility functions, hooks, and Redux store
 │   ├── features/         # Redux slices
@@ -90,7 +89,7 @@ Before you begin, ensure you have:
 │   ├── store.ts          # Redux store configuration
 │   └── types/            # TypeScript types
 ├── public/               # Static assets
-├── next.config.mjs       # Next.js configuration
+├── vite.config.js        # vite configuration
 └── tailwind.config.js    # Tailwind CSS configuration
 \`\`\`
 
@@ -126,12 +125,11 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 🙏 Acknowledgements
 
 - [OpenWeatherMap](https://openweathermap.org/) for providing the weather data API
-- [Next.js](https://nextjs.org/) for the amazing React framework
+- [Vite & React.js](https://vite.dev/guide/) for the amazing React 
 - [Tailwind CSS](https://tailwindcss.com/) for the utility-first CSS framework
 - [Framer Motion](https://www.framer.com/motion/) for the animation library
 - [Redux Toolkit](https://redux-toolkit.js.org/) for state management
-- [Lucide Icons](https://lucide.dev/) for the beautiful icons
 
 ---
 
-Made with ❤️ by [Your Name]
+Made with ❤️ by MD.Kamrul Hasan
