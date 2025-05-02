@@ -60,7 +60,7 @@ const WeatherCard = ({ data }: WeatherCardProps) => {
       transition={{ duration: 0.5 }}
       className={`weather-card rounded-xl overflow-hidden shadow-lg bg-gradient-to-br ${getWeatherBackground()}`}
     >
-      <div className="p-6 text-white">
+      <div className={`p-6 ${darkMode ? "text-white" : "text-gray-900"}`}>
         <div className="flex flex-col md:flex-row justify-between items-center mb-6">
           <div className="text-center md:text-left mb-4 md:mb-0">
             <h2 className="text-3xl font-bold">
@@ -71,8 +71,12 @@ const WeatherCard = ({ data }: WeatherCardProps) => {
           <div className="flex items-center">
             <WeatherIcon weatherCode={data.weather[0].id} size={64} />
             <div className="ml-4 text-center">
-              <p className="text-4xl font-bold">{Math.round(data.main.temp)}°C</p>
-              <p className="text-lg capitalize">{data.weather[0].description}</p>
+              <p className="text-4xl font-bold">
+                {Math.round(data.main.temp)}°C
+              </p>
+              <p className="text-lg capitalize">
+                {data.weather[0].description}
+              </p>
             </div>
           </div>
         </div>
@@ -94,7 +98,9 @@ const WeatherCard = ({ data }: WeatherCardProps) => {
               </svg>
               <span className="text-sm opacity-90">Feels Like</span>
             </div>
-            <p className="text-xl font-semibold">{Math.round(data.main.feels_like)}°C</p>
+            <p className="text-xl font-semibold">
+              {Math.round(data.main.feels_like)}°C
+            </p>
           </div>
 
           <div className="glass-effect p-4 rounded-lg">
@@ -135,7 +141,9 @@ const WeatherCard = ({ data }: WeatherCardProps) => {
               </svg>
               <span className="text-sm opacity-90">Wind</span>
             </div>
-            <p className="text-xl font-semibold">{Math.round(data.wind.speed * 3.6)} km/h</p>
+            <p className="text-xl font-semibold">
+              {Math.round(data.wind.speed * 3.6)} km/h
+            </p>
           </div>
 
           <div className="glass-effect p-4 rounded-lg">
@@ -192,7 +200,9 @@ const WeatherCard = ({ data }: WeatherCardProps) => {
                   </svg>
                   <span className="text-sm opacity-90">Sunrise</span>
                 </div>
-                <p className="text-xl font-semibold">{formatTime(data.sys.sunrise)}</p>
+                <p className="text-xl font-semibold">
+                  {formatTime(data.sys.sunrise)}
+                </p>
               </div>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -241,7 +251,9 @@ const WeatherCard = ({ data }: WeatherCardProps) => {
                   </svg>
                   <span className="text-sm opacity-90">Sunset</span>
                 </div>
-                <p className="text-xl font-semibold">{formatTime(data.sys.sunset)}</p>
+                <p className="text-xl font-semibold">
+                  {formatTime(data.sys.sunset)}
+                </p>
               </div>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -267,7 +279,7 @@ const WeatherCard = ({ data }: WeatherCardProps) => {
         </div>
       </div>
     </motion.div>
-  )
+  );
 }
 
 export default WeatherCard

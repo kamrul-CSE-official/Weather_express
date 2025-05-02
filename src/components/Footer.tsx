@@ -2,15 +2,27 @@
 
 import { motion } from "framer-motion"
 import Logo from "./Logo";
+import { useAppSelector } from "../hooks/useAppSelector";
 
 const Footer = () => {
+  const { darkMode } = useAppSelector((state) => state.theme);
+
   return (
-    <footer className="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 py-6">
+    <footer
+      className={`py-4 shadow-md transition-colors duration-300 ${
+        darkMode ? "bg-gray-900" : "bg-white"
+      }`}
+    >
+      {/* Logo and Social Media Links */}
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <Logo variant="sm" />
 
-          <div className="text-sm text-gray-500 dark:text-gray-400">
+          <div
+            className={`mt-4 md:mt-0 text-center ${
+              darkMode ? "text-gray-300" : "text-gray-700"
+            }`}
+          >
             <p>
               © {new Date().getFullYear()} Weather Express. All rights reserved.
             </p>

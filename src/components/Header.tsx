@@ -22,7 +22,12 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-white dark:bg-gray-800 shadow-sm">
+    <header
+      className={`fixed top-0 left-0 w-full z-50 transition-colors duration-300 ${
+        darkMode ? "bg-gray-900 shadow-lg" : "bg-white shadow-md"
+      }`}
+    >
+      {/* Logo and Navigation */}
       <div className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
           <Logo variant="md" />
@@ -31,13 +36,19 @@ const Header = () => {
           <div className="hidden md:flex items-center space-x-6">
             <Link
               to="/"
-              className="text-gray-700 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-400 transition-colors"
+              className={`${
+                darkMode ? "text-gray-300" : "text-gray-700"
+              } hover:text-blue-500 dark:hover:text-blue-400 transition-colors`}
+              onClick={() => setIsMenuOpen(false)}
+              aria-label="Home"
             >
               Home
             </Link>
             <button
               onClick={handleThemeToggle}
-              className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+              className={`p-2 rounded-full ${
+                darkMode ? "text-white" : "text-black"
+              } transition-colors`}
               aria-label="Toggle dark mode"
             >
               {darkMode ? (
@@ -64,7 +75,7 @@ const Header = () => {
               ) : (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="size-5 text-gray-700"
+                  className="size-5 text-black"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"

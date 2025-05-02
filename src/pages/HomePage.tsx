@@ -12,6 +12,7 @@ import { useAppDispatch } from "../hooks/useAppDispatch";
 
 const HomePage = () => {
   const { data, loading, error } = useAppSelector((state) => state.weather);
+  const { darkMode } = useAppSelector((state) => state.theme);
   const dispatch = useAppDispatch();
 
   // Add to recent results when weather data is fetched
@@ -22,17 +23,25 @@ const HomePage = () => {
   }, [data, dispatch]);
 
   return (
-    <div className="max-w-4xl mx-auto">
+    <div
+      className={`container mx-auto px-4 py-8 ${
+        darkMode ? "bg-gray-900" : "bg-white shadow-md"
+      } transition-colors duration-300`}
+    >
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         className="text-center mb-8"
       >
-        <h1 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-2">
+        <h1
+          className={`text-3xl font-bold ${
+            darkMode ? "text-white" : "text-gray-900"
+          }`}
+        >
           Weather Forecast
         </h1>
-        <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+        <p className={`${darkMode ? "text-gray-300" : "text-gray-700"}`}>
           Search for a city to get the current weather conditions and forecast.
         </p>
       </motion.div>
@@ -40,7 +49,7 @@ const HomePage = () => {
       <SearchBar />
 
       <AnimatePresence>
-        <div className="mt-8">
+        <div className={`mt-8 ${darkMode ? "text-gray-300" : "text-gray-700"}`}>
           {error && (
             <div>
               <ErrorMessage message={error} /> <br />
