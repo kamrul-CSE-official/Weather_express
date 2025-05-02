@@ -1,8 +1,8 @@
-# Next.js Weather App
+# Weather Express
 
-A modern, responsive weather application built with Next.js, Redux Toolkit, Tailwind CSS, and Framer Motion. This app allows users to search for weather information by city name, view current weather conditions, and keep track of recent searches.
+A modern, responsive weather application built with React.js, Redux Toolkit, Tailwind CSS, and Framer Motion. This app allows users to search for weather information by city name, view current weather conditions, and keep track of recent searches.
 
-![Weather App Screenshot](/screenshot.png)
+![Weather express](/weather-express.png)
 
 ## 🌟 Features
 

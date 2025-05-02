@@ -1,41 +1,24 @@
 "use client"
 
 import { motion } from "framer-motion"
+import Logo from "./Logo";
 
 const Footer = () => {
   return (
     <footer className="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 py-6">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
-            className="flex items-center mb-4 md:mb-0"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="size-6 text-blue-500 dark:text-blue-400 mr-2"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z" />
-            </svg>
-            <span className="text-gray-700 dark:text-gray-300 font-medium">WeatherApp</span>
-          </motion.div>
+          <Logo variant="sm" />
 
           <div className="text-sm text-gray-500 dark:text-gray-400">
-            <p>© {new Date().getFullYear()} WeatherApp. All rights reserved.</p>
-            <p className="mt-1">Powered by OpenWeatherMap API</p>
+            <p>
+              © {new Date().getFullYear()} Weather Express. All rights reserved.
+            </p>
           </div>
 
           <div className="mt-4 md:mt-0 flex space-x-4">
             <motion.a
-              href="https://github.com"
+              href="https://github.com/kamrul-CSE-official"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.1 }}
@@ -64,24 +47,26 @@ const Footer = () => {
               className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
               aria-label="Twitter"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="size-5"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
+              <a
+                href="https://www.linkedin.com/in/md-kamrul-hasan-dev/"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
-              </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="size-5"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4V24h-4V8zM8.5 8h3.5v2.2h.1c.5-1 1.8-2.2 3.7-2.2 4 0 4.7 2.6 4.7 6V24h-4v-7.6c0-1.8-.03-4-2.5-4-2.5 0-2.9 1.9-2.9 3.8V24h-4V8z" />
+                </svg>
+              </a>
             </motion.a>
           </div>
         </div>
       </div>
     </footer>
-  )
-}
+  );
+};
 
 export default Footer

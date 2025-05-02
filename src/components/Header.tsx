@@ -6,46 +6,26 @@ import { useAppSelector } from "../hooks/useAppSelector"
 import { toggleDarkMode } from "../store/themeSlice"
 import { Link } from "react-router"
 import { useAppDispatch } from "../hooks/useAppDispatch"
+import Logo from "./Logo";
 
 const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const darkMode = useAppSelector((state) => state.theme.darkMode)
-  const dispatch = useAppDispatch()
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const darkMode = useAppSelector((state) => state.theme.darkMode);
+  const dispatch = useAppDispatch();
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen)
-  }
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   const handleThemeToggle = () => {
-    dispatch(toggleDarkMode())
-  }
+    dispatch(toggleDarkMode());
+  };
 
   return (
     <header className="bg-white dark:bg-gray-800 shadow-sm">
       <div className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
-          <Link to="/" className="flex items-center space-x-2">
-            <motion.div
-              initial={{ rotate: 0 }}
-              animate={{ rotate: 360 }}
-              transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
-              className="text-blue-500 dark:text-blue-400"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="size-8"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z" />
-              </svg>
-            </motion.div>
-            <span className="text-xl font-bold text-gray-900 dark:text-white">WeatherApp</span>
-          </Link>
+          <Logo variant="md" />
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-6">
@@ -200,7 +180,7 @@ const Header = () => {
         )}
       </div>
     </header>
-  )
-}
+  );
+};
 
 export default Header
