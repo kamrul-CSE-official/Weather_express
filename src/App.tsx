@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { setDarkMode } from "./store/themeSlice";
 import { RouterProvider } from "react-router";
 import router from "./routes/routes";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   const dispatch = useDispatch();
@@ -25,6 +26,7 @@ function App() {
   return (
     <>
       <RouterProvider router={router} />
+      <ScrollToTop />
     </>
   );
 }
